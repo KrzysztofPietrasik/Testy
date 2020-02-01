@@ -9,9 +9,9 @@ namespace Projects.UnitTests
     {
 
         [Test]
-        [TestCase(15, "FizzBuzz")]
-        [TestCase(3, "Fizz")]
-        [TestCase(5, "Buzz")]
+        [TestCase(45, "FizzBuzz")]
+        [TestCase(9, "Fizz")]
+        [TestCase(10, "Buzz")]
         public void GetOutput_NumberIsDivisibleBy3AndOr5_ShouldReturnCorrectString(int a, string expectedResult)
         {
             var result = FizzBuzz.GetOutput(a);
@@ -29,11 +29,9 @@ namespace Projects.UnitTests
 
         [Test]
 
-        public void GetOutput_NumberIsLesserThan0_ShouldThrowArgumentException()
-        {
-            var result = Assert.Throws<ArgumentException>(() => FizzBuzz.GetOutput(-2));
-
-            Assert.That(result.Message, Is.EqualTo("Liczba nie może być mniejsza od 0"));
+        public void GetOutput_NumberIsLessThan0_ThrowsArgumentException()
+        {          
+            Assert.That(() => FizzBuzz.GetOutput(-2), Throws.ArgumentException);
         }
     }
 }

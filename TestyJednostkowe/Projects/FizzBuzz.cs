@@ -21,7 +21,7 @@ namespace Projects
                 return "Buzz";
            
             if (number < 0)
-                throw new System.ArgumentException("Liczba nie może być mniejsza od 0");
+                throw new System.ArgumentException();
 
             return number.ToString();
         }
